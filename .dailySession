@@ -1,0 +1,32 @@
+tmux has-session -t daily
+if [ $? != 0 ]
+then
+#start net in home and prepare editor env
+	tmux new-session -s daily -n editor -d
+	tmux send-keys -t daily 'startNet' C-m
+	tmux send-keys -t daily 'checkRepo' C-m
+	tmux split-window -h -p 30 -t daily
+	tmux send-keys -t daily:1.2 'checkRepo' C-m
+    tmux send-keys -t daily:1.2 'wrling' C-m
+	tmux select-window -t daily:1.2
+	tmux split-window -v -t daily
+	tmux send-keys -t daily:1.3 'checkRepo' C-m
+#console
+	tmux new-window -n console -t daily 
+	tmux send-keys -t daily:2 'cd ~/Documents' C-m
+	tmux split-window -v -t daily
+	tmux send-keys -t daily:2.2 'cd ~/' C-m
+#cheatScheets
+	tmux new-window -n cheatScheets -t daily 
+	tmux send-keys -t daily:3 'cd ~/Documents/CheatSheets ' C-m
+	tmux send-keys -t daily:3 'vim vimCheat.txt' C-m
+	tmux split-window -h -t daily:3
+	tmux send-keys -t daily:3.2 'cd ~/Documents/CheatSheets ' C-m
+	tmux send-keys -t daily:3.2 'vim tmuxCheat.txt' C-m
+#top
+	tmux new-window -n top -t daily 
+	tmux send-keys -t daily:4 'top' C-m
+#back to first window
+	tmux select-window -t daily:1.1
+fi
+tmux attach -t daily:1.1
