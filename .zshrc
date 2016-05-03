@@ -115,6 +115,7 @@ function dailySession()
 {
 	~/.files/.dailySession
 }
+
 #source of history search
 source ~/zsh-history-substring-search/zsh-history-substring-search.zsh
 

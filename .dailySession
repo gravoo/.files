@@ -3,9 +3,8 @@ if [ $? != 0 ]
 then
 #start net in home and prepare editor env
 	tmux new-session -s daily -n editor -d
-	tmux send-keys -t daily 'startNet' C-m
-	tmux send-keys -t daily 'checkRepo' C-m
 	tmux split-window -h -p 30 -t daily
+	tmux send-keys -t daily:1.1 'startNet' C-m
 	tmux send-keys -t daily:1.2 'checkRepo' C-m
     tmux send-keys -t daily:1.2 'wrling' C-m
 	tmux select-window -t daily:1.2
