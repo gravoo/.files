@@ -148,11 +148,13 @@ function checkRepo()
 {
     if [ -e "$MYWORKREPO" ]; then
         cd $MYWORKREPO
-            export http_proxy="http://10.144.1.10:8080"
-            export https_proxy="https://10.144.1.10:8080"
+        export http_proxy="http://10.144.1.10:8080"
+        export https_proxy="https://10.144.1.10:8080"
+        wrling
         return 1
     else
         cd $MYHOMEREPO
+        startNet
         return 0
     fi
 }
