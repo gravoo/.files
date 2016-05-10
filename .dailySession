@@ -3,24 +3,32 @@ if [ $? != 0 ]
 then
 #start net in home and prepare editor env
 	tmux new-session -s daily -n editor -d
-	tmux send-keys -t daily 'checkRepo' C-m
+	tmux send-keys -t daily:1 'cd $MYWORKREPO' C-m
 	tmux split-window -h -p 30 -t daily
-	tmux send-keys -t daily:1.2 'cd $MYWORKREPO' C-m
+	tmux send-keys -t daily:1.2 'checkRepo' C-m
 	tmux split-window -v -t daily
 	tmux send-keys -t daily:1.3 'cd $MYWORKREPO' C-m
 #console
 	tmux new-window -n console -t daily 
-	tmux send-keys -t daily:2 'cd ~/Documents' C-m
+	tmux send-keys -t daily:2 'cd ~/' C-m
 	tmux split-window -v -t daily
-	tmux send-keys -t daily:2.2 'cd ~/' C-m
+	tmux send-keys -t daily:2.2 'cd ~/Documents' C-m
+	tmux split-window -h -t daily
+	tmux send-keys -t daily:2.3 'cd ~/Downloads' C-m
 #cheatSheets
 	tmux new-window -n cheatScheets -t daily 
-	tmux send-keys -t daily:3 'vim  ~.files/CheatSheets/vimCheat.txt ' C-m
+	tmux send-keys -t daily:3 'vim  ~/.files/CheatSheets/vimCheat.txt ' C-m
 	tmux split-window -h -t daily:3
-	tmux send-keys -t daily:3 'vim  ~.files/CheatSheets/tmuxCheat.txt ' C-m
+	tmux send-keys -t daily:3 'vim  ~/.files/CheatSheets/tmuxCheat.txt ' C-m
 #top
     tmux new-window -n top -t daily 
     tmux send-keys -t daily:4 'top' C-m
+#config repo
+    tmux new-window -n .files -t daily 
+	tmux send-keys -t daily:5 'cd ~/.files' C-m
+    tmux send-keys -t daily:5 'vim -p .dailySession .tmux.conf .tmux.design .vimperatorrc .vimrc .ycm_extra_conf.py .zshrc README.md' C-m
+	tmux split-window -h -t daily
+	tmux send-keys -t daily:5.2 'cd ~/.files' C-m
 #back to first window
 	tmux select-window -t daily:1
 fi
