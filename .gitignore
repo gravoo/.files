@@ -1,0 +1,16 @@
+*.syntastic_cpp_config_ut
+*.syntastic_cpp_config
+*.swp
+*.cpp~
+*.cpp.orig
+*.hpp.swp
+*.hpp~
+*.hpp.orig
+*.pyc
+*.pyo
+*.ttcn3.orig
+*.diff
+
+
+
+

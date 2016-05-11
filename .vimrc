@@ -47,3 +47,5 @@ highlight ColorColumn ctermbg=darkgray
 set colorcolumn=140
 "show the cursor position all the time
 set cursorline
+"enable graphical help in command menu
+set wildmenu
