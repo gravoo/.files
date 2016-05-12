@@ -49,3 +49,11 @@ set colorcolumn=140
 set cursorline
 "enable graphical help in command menu
 set wildmenu
+" redraw when its neceseraly
+set lazyredraw  
+" search as characters are entered
+set incsearch           
+" turn off search highlight
+nnoremap ,<space> :nohlsearch<CR>
+" highlight last inserted text
+nnoremap gV `[v`]
