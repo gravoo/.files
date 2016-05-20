@@ -53,6 +53,8 @@ set wildmenu
 set lazyredraw  
 " search as characters are entered
 set incsearch           
+" autosve 
+set autowrite
 " turn off search highlight
 nnoremap ,<space> :nohlsearch<CR>
 " highlight last inserted text
@@ -64,8 +66,7 @@ nnoremap ,s :mksession<CR>
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb' " order mathing top to bottom
 let g:ctrlp_switch_buffer = 0 "always open files in the new buffer
-let g:ctrlp_working_path_mode = 0 
+let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " seatch by ag
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'wa' "where to start search by ctrlP 
