@@ -7,7 +7,7 @@ set focuscontent
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 set noscrollbars
 command! -nargs=* Google tabopen google <args>
-command! -nargs=* Translate tabopen googletranslate <args>
-command! -nargs=* Wiki tabopen Wikipedia <args>
+command! -nargs=* Translate tabopen google1 <args>
+command! -nargs=* Wiki tabopen wikipedia <args>
 
 " vim: set ft=vimperator:
