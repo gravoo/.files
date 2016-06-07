@@ -131,9 +131,6 @@ fi
 #fi
 
 #my repos
-export MYHOMEREPO=~/
-export MYWORKREPO=~/gitRepo
-export WRLING=142
 function setVolume()
 {
     pacmd set-sink-volume 1 $(($1 * 5000))
@@ -171,11 +168,24 @@ function scpU()
     scp -r $1 wrling$WRLING:~bsadowsk/$2
 }
 
+#secured coppy from home dir to remote host
+function scpUp()
+{
+    scp -r $1 wrling$WRLING:$2
+}
+
+#secured coppy from home dir to remote host
+function scpDw()
+{
+    scp -r wrling$WRLING:$1 $2
+}
+
 #secured coppy from remote to home dir host
 function scpD()
 {
     scp -r wrling$WRLING:~bsadowsk/$1 $2
 }
+
 #connect to wrling with own terminall
 function wrlingt()
 {
