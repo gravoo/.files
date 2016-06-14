@@ -1,3 +1,6 @@
+"turn of vi compatibility mode
+set nocompatible
+"set zsh ash shell
 set shell=zsh
 "turn on syntax hihglight
 syntax enable
@@ -33,16 +36,14 @@ set ignorecase
 "overides ignorecase when capital leaters are used
 set smartcase
 "configure tabwidth and insert spaces instead of tabs
-set tabstop=4	"tab width is 4 spaces
-set shiftwidth=4	"indent alsow with 3 spaces
-set expandtab	"expand tab to spaces
-"auto reload files after 4s
-set autoread
+set tabstop=4   "tab width is 4 spaces
+set shiftwidth=4    "indent alsow with 4 spaces
+set expandtab   "expand tab to spaces
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 "scrolls the tex so that there are always al least five lines above
-set so=5
-"show margin at 120 char in darkgray
+set so=8
+"show margin at 140 char in darkgray
 highlight ColorColumn ctermbg=darkgray
 set colorcolumn=140
 "show the cursor position all the time
@@ -50,13 +51,24 @@ set cursorline
 "enable graphical help in command menu
 set wildmenu
 " redraw when its neceseraly
-set lazyredraw  
+set lazyredraw
 " search as characters are entered
-set incsearch           
-" autosve 
-set autowrite
+set incsearch
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+" Navigate properly when lines are wrapped
+nnoremap j gj
+nnoremap k gk
+"Use enter to create new lines w/o entering insert mode
+nnoremap <CR> o<Esc>
 " turn off search highlight
 nnoremap ,<space> :nohlsearch<CR>
+"turn of swaps files
+set nobackup
+set nowritebackup
+set noswapfile 
+set autowrite     " Automatically :write before running commands
+set autoread      " Reload files changed outside vim
 " highlight last inserted text
 nnoremap gV `[v`]
 " save session
@@ -64,10 +76,18 @@ nnoremap ,s :mksession<CR>
 
 "Plugin section 
 " CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb' " order mathing top to bottom
-let g:ctrlp_switch_buffer = 0 "always open files in the new buffer
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " seatch by ag
+let g:ctrlp_match_window = 'bottom,order:ttb,results:100' " order mathing top to bottom
+let g:ctrlp_user_command = 'ag %s -l --silent --depth -1 --nogroup --hidden -g ""' " search by ag
+let g:ctrlp_line_prefix = '> '
+let g:ctrlp_tabpage_position = 'l'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_by_filename = 1 "filter by filename
+let g:ctrlp_regexp = 1 "open in regex mode
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_lazy_update = 100
+nnoremap <space>p :CtrlP 
+nnoremap <space>/ :Ag!<SPACE>
+let g:ag_working_path_mode="r"

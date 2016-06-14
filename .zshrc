@@ -97,18 +97,18 @@ export KEYTIMEOUT=1
 
 function startNet()
 {
-	local=$1
-	if [[ -z "$local" ]]; then
-		local='NETIASPOT-CD8AC0'	
-	fi
-	sudo netctl start wlp8s0-$local
-	
+    local=$1
+    if [[ -z "$local" ]]; then
+        local='NETIASPOT-CD8AC0'
+    fi
+    sudo netctl start wlp8s0-$local
+
 }
 export TERM=xterm-256color
 
 function dailySession()
 {
-	~/.files/.dailySession
+    ~/.files/.dailySession
 }
 
 #source of history search
@@ -159,7 +159,7 @@ function checkRepo()
 #connect to wrling
 function wrling()
 {
-	ssh wrling$WRLING.emea.nsn-net.net 
+    ssh wrling$WRLING.emea.nsn-net.net 
 }
 
 #secured coppy from home dir to remote host
