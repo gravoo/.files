@@ -93,6 +93,9 @@ SAVEHIST=100000
 #unsetopt beep
 bindkey -v
 export KEYTIMEOUT=1
+export BRANCH="gitRepo"
+export MYHOMEREPO=~/
+export MYWORKREPO=~/$BRANCH
 # End of lines configured by zsh-newuser-install
 
 function startNet()
@@ -154,41 +157,5 @@ function checkRepo()
         startNet
         return 0
     fi
-}
-
-#connect to wrling
-function wrling()
-{
-    ssh wrling$WRLING.emea.nsn-net.net 
-}
-
-#secured coppy from home dir to remote host
-function scpU()
-{
-    scp -r $1 wrling$WRLING:~bsadowsk/$2
-}
-
-#secured coppy from home dir to remote host
-function scpUp()
-{
-    scp -r $1 wrling$WRLING:$2
-}
-
-#secured coppy from home dir to remote host
-function scpDw()
-{
-    scp -r wrling$WRLING:$1 $2
-}
-
-#secured coppy from remote to home dir host
-function scpD()
-{
-    scp -r wrling$WRLING:~bsadowsk/$1 $2
-}
-
-#connect to wrling with own terminall
-function wrlingt()
-{
-	ssh -t wrling$WRLING.emea.nsn-net.net 
 }
 

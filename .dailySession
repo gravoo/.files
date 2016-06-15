@@ -5,12 +5,12 @@ then
 	tmux new-session -s daily -n editor -d
 	tmux send-keys -t daily:1 'cd $MYWORKREPO' C-m
 	tmux split-window -h -p 30 -t daily
-	tmux send-keys -t daily:1.2 'checkRepo' C-m
+	tmux send-keys -t daily:1.2 'MYWORKREPO' C-m
 	tmux split-window -v -t daily
 	tmux send-keys -t daily:1.3 'cd $MYWORKREPO' C-m
 #console
 	tmux new-window -n console -t daily 
-	tmux send-keys -t daily:2 'cd ~/' C-m
+	tmux send-keys -t daily:2 'checkRepo' C-m
 	tmux split-window -v -t daily
 	tmux send-keys -t daily:2.2 'cd ~/Documents' C-m
 	tmux split-window -h -t daily
