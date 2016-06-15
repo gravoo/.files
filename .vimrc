@@ -77,7 +77,7 @@ nnoremap ,s :mksession<CR>
 "Plugin section 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb,results:100' " order mathing top to bottom
-let g:ctrlp_user_command = 'ag %s -l --silent --depth -1 --nogroup --hidden -g ""' " search by ag
+let g:ctrlp_user_command = 'ag %s -l -a --silent --depth -1 --nogroup --hidden -g ""' " search by ag
 let g:ctrlp_line_prefix = '> '
 let g:ctrlp_tabpage_position = 'l'
 let g:ctrlp_map = '<c-p>'
@@ -85,9 +85,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_by_filename = 1 "filter by filename
-let g:ctrlp_regexp = 1 "open in regex mode
+let g:ctrlp_regexp = 0 "open in regex mode
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_lazy_update = 100
+let g:ctrlp_lazy_update = 1
+let g:ag_working_path_mode="ca"
+let g:ag_prg="ag --vimgrep --smart-case"
+let g:ag_highlight=1
 nnoremap <space>p :CtrlP 
 nnoremap <space>/ :Ag!<SPACE>
-let g:ag_working_path_mode="r"
+nnoremap <space>f :AgFile!<SPACE>
+nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
+nnoremap <space>p  :CtrlP 
+nnoremap <space>b  :CtrlPBuffer<cr>
+nnoremap <space><space> :<C-u>Unite buffer<cr>
