@@ -91,9 +91,11 @@ let g:ctrlp_lazy_update = 1
 let g:ag_working_path_mode="ca"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
+nmap <F8> :TagbarToggle<CR>
 nnoremap <space>p :CtrlP 
 nnoremap <space>/ :Ag!<SPACE>
 nnoremap <space>f :AgFile!<SPACE>
+nnoremap - :Ag! <SPACE><C-R><C-W>
 nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
 nnoremap <space>p  :CtrlP 
 nnoremap <space>b  :CtrlPBuffer<cr>
