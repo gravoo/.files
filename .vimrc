@@ -19,8 +19,8 @@ endif
 set relativenumber
 set number
 "copy and paste to system clipboard
-set clipboard=unnamed
-set clipboard=unnamedplus
+"set clipboard=unnamed
+"set clipboard=unnamedplus
 "highlight mathing braces
 set showmatch
 "highlight found pattern
@@ -104,4 +104,4 @@ nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
 nnoremap <space>p :Files<cr>
 nnoremap <space>t :Files
 nnoremap <space><space> :Buffers<cr>
-nnoremap <space><space> :<C-u>Unite buffer<cr>
+"nnoremap <space><space> :<C-u>Unite buffer<cr>
