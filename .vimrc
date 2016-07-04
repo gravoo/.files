@@ -86,9 +86,9 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_by_filename = 1 "filter by filename
 let g:ctrlp_regexp = 0 "open in regex mode
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'ac'
 let g:ctrlp_lazy_update = 1
-let g:ag_working_path_mode="ca"
+let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
@@ -97,6 +97,6 @@ nnoremap <space>/ :Ag!<SPACE>
 nnoremap <space>f :AgFile!<SPACE>
 nnoremap - :Ag! <SPACE><C-R><C-W>
 nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
-nnoremap <space>p  :CtrlP 
-nnoremap <space>b  :CtrlPBuffer<cr>
+nnoremap <space>p  :Files<cr> 
+nnoremap <space>b  :Buffers<cr>
 nnoremap <space><space> :<C-u>Unite buffer<cr>

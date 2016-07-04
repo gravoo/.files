@@ -98,6 +98,9 @@ export MYHOMEREPO=~/
 export MYWORKREPO=~/$BRANCH
 # End of lines configured by zsh-newuser-install
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+
 function startNet()
 {
     local=$1
@@ -107,7 +110,7 @@ function startNet()
     sudo netctl start wlp8s0-$local
 
 }
-export TERM=xterm-256color
+export TERM=xterm-256color 
 
 function dailySession()
 {
@@ -158,4 +161,8 @@ function checkRepo()
         return 0
     fi
 }
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
