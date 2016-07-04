@@ -78,6 +78,7 @@ nnoremap ,s :mksession<CR>
 "if exists read from loacl vimrc
 set exrc
 set secure
+set rtp+=~/.fzf
 "Plugin section 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb,results:100' " order mathing top to bottom
@@ -96,11 +97,11 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
-nnoremap <space>p :CtrlP 
 nnoremap <space>/ :Ag!<SPACE>
 nnoremap <space>f :AgFile!<SPACE>
 nnoremap - :Ag! <SPACE><C-R><C-W>
 nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
-nnoremap <space>p  :Files<cr> 
-nnoremap <space>b  :Buffers<cr>
+nnoremap <space>p :Files<cr>
+nnoremap <space>t :Files
+nnoremap <space><space> :Buffers<cr>
 nnoremap <space><space> :<C-u>Unite buffer<cr>
