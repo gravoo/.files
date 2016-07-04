@@ -39,6 +39,8 @@ set smartcase
 set tabstop=4   "tab width is 4 spaces
 set shiftwidth=4    "indent alsow with 4 spaces
 set expandtab   "expand tab to spaces
+set softtabstop=4
+set noexpandtab
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 "scrolls the tex so that there are always al least five lines above
@@ -73,7 +75,9 @@ set autoread      " Reload files changed outside vim
 nnoremap gV `[v`]
 " save session
 nnoremap ,s :mksession<CR>
-
+"if exists read from loacl vimrc
+set exrc
+set secure
 "Plugin section 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb,results:100' " order mathing top to bottom

@@ -11,3 +11,5 @@ command! -nargs=* Translate tabopen googleTranslator <args>
 command! -nargs=* Wiki tabopen wikipedia <args>
 
 " vim: set ft=vimperator:
+noremap m :tabprevious<CR>
+noremap , :tabnext<CR>
