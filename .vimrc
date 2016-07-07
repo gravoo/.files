@@ -12,6 +12,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 "add support for 256 colours
@@ -72,7 +76,7 @@ nnoremap ,<space> :nohlsearch<CR>
 "turn of swaps files
 set nobackup
 set nowritebackup
-set noswapfile 
+set noswapfile
 set autowrite     " Automatically :write before running commands
 set autoread      " Reload files changed outside vim
 " highlight last inserted text
@@ -83,9 +87,10 @@ nnoremap ,s :mksession<CR>
 set exrc
 set secure
 set rtp+=~/.fzf
-"Plugin section 
+"Plugin section
 "airtline preferences
 let g:airline_theme='wombat'
+"auto-pairs 
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
