@@ -4,8 +4,16 @@ set nocompatible
 set shell=zsh
 "turn on syntax hihglight
 syntax enable
-"add support for plugins
-execute pathogen#infect()
+
+"enable plugins
+call plug#begin('~/.vim/plugged')
+"add support for fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
 "add support for 256 colours
 set t_Co=256
 "change colorscheme
@@ -76,19 +84,8 @@ set exrc
 set secure
 set rtp+=~/.fzf
 "Plugin section 
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb,results:100' " order mathing top to bottom
-let g:ctrlp_user_command = 'ag %s -l -a --silent --depth -1 --nogroup --hidden -g ""' " search by ag
-let g:ctrlp_line_prefix = '> '
-let g:ctrlp_tabpage_position = 'l'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-let g:ctrlp_by_filename = 1 "filter by filename
-let g:ctrlp_regexp = 0 "open in regex mode
-let g:ctrlp_working_path_mode = 'ac'
-let g:ctrlp_lazy_update = 1
+"airtline preferences
+let g:airline_theme='wombat'
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
