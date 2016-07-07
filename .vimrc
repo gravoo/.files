@@ -18,9 +18,6 @@ endif
 "turn on line numbering
 set relativenumber
 set number
-"copy and paste to system clipboard
-"set clipboard=unnamed
-"set clipboard=unnamedplus
 "highlight mathing braces
 set showmatch
 "highlight found pattern
@@ -40,7 +37,6 @@ set tabstop=4   "tab width is 4 spaces
 set shiftwidth=4    "indent alsow with 4 spaces
 set expandtab   "expand tab to spaces
 set softtabstop=4
-set noexpandtab
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 "scrolls the tex so that there are always al least five lines above
@@ -97,11 +93,12 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
-nnoremap <space>/ :Ag!<SPACE>
+nnoremap <space>? :Ag!<SPACE>
 nnoremap <space>f :AgFile!<SPACE>
-nnoremap - :Ag! <SPACE><C-R><C-W>
+nnoremap - :Ag! <C-R><C-W><cr>
 nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
-nnoremap <space>p :Files<cr>
+nnoremap <space>/ :Files<cr>
 nnoremap <space>t :Files
 nnoremap <space><space> :Buffers<cr>
+nnoremap <space>h :History<cr>
 "nnoremap <space><space> :<C-u>Unite buffer<cr>

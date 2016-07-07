@@ -110,7 +110,7 @@ function startNet()
     sudo netctl start wlp8s0-$local
 
 }
-export TERM=xterm-256color 
+export TERM=screen-256color 
 
 function dailySession()
 {
