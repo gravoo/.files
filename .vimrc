@@ -9,13 +9,17 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 "add support for fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plug/vimproc', 'do': 'make' }
+Plug 'amitab/vim-unite-cscope'
+Plug 'rking/ag.vim'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "add support for 256 colours
@@ -96,11 +100,12 @@ let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
 nnoremap <space>? :Ag!<SPACE>
-nnoremap <space>f :AgFile!<SPACE>
-nnoremap - :Ag! <C-R><C-W><cr>
-nnoremap <space>- :AgFile! <SPACE><C-R><C-W>
+nnoremap - :Ag <C-R><C-W><CR>
 nnoremap <space>/ :Files<cr>
 nnoremap <space>t :Files
+nnoremap <space>- :FZF -q <C-R><C-W><CR>
 nnoremap <space><space> :Buffers<cr>
 nnoremap <space>h :History<cr>
-"nnoremap <space><space> :<C-u>Unite buffer<cr>
+nmap ,cs :let @+=expand("%")<CR>
+nmap ,cl :let @+=expand("%:p")<CR>
+nmap ,cn :let @+=expand('%:t')<CR>
