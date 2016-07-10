@@ -110,7 +110,7 @@ function startNet()
     sudo netctl start wlp8s0-$local
 
 }
-export TERM=screen-256color 
+export TERM=screen-256color
 
 function dailySession()
 {
@@ -131,7 +131,7 @@ if [[ -z "$TMUX" ]] ;then
 fi
 
 #if [[ -z $(pgrep xterm) && -n $(pgrep i3) ]]; then
-    #i3-sensible-terminal 
+    #i3-sensible-terminal
 #else
     #echo "xterm is running"
 #fi
@@ -147,12 +147,21 @@ function touchpadToggle()
     ~/toggletouchpad.sh
 }
 
+function alignWindows()
+{
+    sleep 30 && /home/bsadowsk/wmctrlAssign.sh
+}
+
 function checkRepo()
 {
     if [ -e "$MYWORKREPO" ]; then
         cd $MYWORKREPO
-        export http_proxy="http://10.144.1.10:8080"
-        export https_proxy="https://10.144.1.10:8080"
+        alignWindows
+#        export http_proxy="http://10.144.1.10:8080"
+#        export https_proxy="https://10.144.1.10:8080"
+#http_proxy=http://10.159.32.155:8080
+#https_proxy=http://10.159.32.155:8080
+#ftp_proxy=http://10.159.32.155:8080
         wrling
         return 1
     else
@@ -165,4 +174,5 @@ function checkRepo()
 export FZF_DEFAULT_COMMAND='ag -g ""'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+alias refsource='source ~/.zshrc'
 

@@ -3,11 +3,11 @@ if [ $? != 0 ]
 then
 #start net in home and prepare editor env
 	tmux new-session -s daily -n editor -d
-	tmux send-keys -t daily:1 'cd $MYWORKREPO' C-m
+	tmux send-keys -t daily:1 'repo' C-m
 	tmux split-window -h -p 30 -t daily
-	tmux send-keys -t daily:1.2 'MYWORKREPO' C-m
+	tmux send-keys -t daily:1.2 'repo' C-m
 	tmux split-window -v -t daily
-	tmux send-keys -t daily:1.3 'cd $MYWORKREPO' C-m
+	tmux send-keys -t daily:1.3 'repo' C-m
 #console
 	tmux new-window -n console -t daily 
 	tmux send-keys -t daily:2 'checkRepo' C-m

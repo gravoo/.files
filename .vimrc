@@ -20,6 +20,7 @@ Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plug/vimproc', 'do': 'make' }
 Plug 'amitab/vim-unite-cscope'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 "add support for 256 colours
