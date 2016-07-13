@@ -5,7 +5,7 @@ export ZSH=/home/$USER/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="rkj"
+#ZSH_THEME="rkj"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,14 +77,7 @@ export EDITOR='vim'
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-# The following lines were added by compinstall
 
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/$USER/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=100000
@@ -110,15 +103,12 @@ function startNet()
     sudo netctl start wlp8s0-$local
 
 }
-export TERM=screen-256color
+export TERM=xterm-256color
 
 function dailySession()
 {
     ~/.files/.dailySession
 }
-
-#source of history search
-source ~/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 #attach to tmux on start
 if [[ -z "$TMUX" ]] ;then
@@ -129,6 +119,11 @@ if [[ -z "$TMUX" ]] ;then
         tmux attach-session -t "$ID" # if available attach to it
     fi
 fi
+
+
+#if [ ! -f /home/$USER/.vim/autoload/plug.vim ]; then
+#    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#fi
 
 #if [[ -z $(pgrep xterm) && -n $(pgrep i3) ]]; then
     #i3-sensible-terminal
@@ -157,11 +152,6 @@ function checkRepo()
     if [ -e "$MYWORKREPO" ]; then
         cd $MYWORKREPO
         alignWindows
-#        export http_proxy="http://10.144.1.10:8080"
-#        export https_proxy="https://10.144.1.10:8080"
-#http_proxy=http://10.159.32.155:8080
-#https_proxy=http://10.159.32.155:8080
-#ftp_proxy=http://10.159.32.155:8080
         wrling
         return 1
     else

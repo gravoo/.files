@@ -4,6 +4,12 @@ set nocompatible
 set shell=zsh
 "turn on syntax hihglight
 syntax enable
+"download and enable if no vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
 "enable plugins
 call plug#begin('~/.vim/plugged')
@@ -21,12 +27,16 @@ Plug 'amitab/vim-unite-cscope'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/wombat256.vim', {'dir': '~/.vim/colors/wombat256'}
+Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
 call plug#end()
 
 "add support for 256 colours
 set t_Co=256
 "change colorscheme
+
 colorscheme wombat256mod
+
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
 if &term =~ '256color'
@@ -107,6 +117,11 @@ nnoremap <space>t :Files
 nnoremap <space>- :FZF -q <C-R><C-W><CR>
 nnoremap <space><space> :Buffers<cr>
 nnoremap <space>h :History<cr>
+"for airline support 
+set laststatus=2
+set ttimeoutlen=50
+set encoding=utf-8
+let g:airline_powerline_fonts=1 
 nmap ,cs :let @+=expand("%")<CR>
 nmap ,cl :let @+=expand("%:p")<CR>
 nmap ,cn :let @+=expand('%:t')<CR>
