@@ -83,6 +83,7 @@ set incsearch
 set list listchars=tab:»·,trail:·,nbsp:·
 " Navigate properly when lines are wrapped
 nnoremap j gj
+inoremap jk <Esc>
 nnoremap k gk
 "Use enter to create new lines w/o entering insert mode
 nnoremap <CR> o<Esc>

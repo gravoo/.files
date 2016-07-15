@@ -5,7 +5,7 @@ export ZSH=/home/$USER/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="rkj"
+ZSH_THEME="dogenpunk"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -103,7 +103,7 @@ function startNet()
     sudo netctl start wlp8s0-$local
 
 }
-export TERM=xterm-256color
+export TERM=screen-256color
 
 function dailySession()
 {
