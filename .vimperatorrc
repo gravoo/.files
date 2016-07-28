@@ -9,6 +9,8 @@ set noscrollbars
 command! -nargs=* Google tabopen google <args>
 command! -nargs=* Translate tabopen translate <args>
 command! -nargs=* Wiki tabopen wikipedia <args>
+command! -nargs=* TPB tabopen thepiratebay <args>
+command! -nargs=* Youtube tabopen youtube <args>
 
 " vim: set ft=vimperator:
 noremap m :tabprevious<CR>

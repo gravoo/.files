@@ -124,6 +124,10 @@ fi
 #if [ ! -f /home/$USER/.vim/autoload/plug.vim ]; then
 #    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #fi
+if [ ! -d /home/$USER/.tmux/plugins ]; then
+    echo "downloading tmux plugin file"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 #if [[ -z $(pgrep xterm) && -n $(pgrep i3) ]]; then
     #i3-sensible-terminal
@@ -147,19 +151,8 @@ function alignWindows()
     sleep 30 && /home/bsadowsk/wmctrlAssign.sh
 }
 
-function checkRepo()
-{
-    if [ -e "$MYWORKREPO" ]; then
-        cd $MYWORKREPO
-        alignWindows
-        wrling
-        return 1
-    else
-        cd $MYHOMEREPO
-        startNet
-        return 0
-    fi
-}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 # To apply the command to CTRL-T as well
