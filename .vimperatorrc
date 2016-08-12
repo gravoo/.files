@@ -10,7 +10,7 @@ command! -nargs=* Google tabopen google <args>
 command! -nargs=* Translate tabopen translate <args>
 command! -nargs=* Wiki tabopen wikipedia <args>
 command! -nargs=* TPB tabopen thepiratebay <args>
-command! -nargs=* Youtube tabopen youtube <args>
+command! -nargs=* Youtube tabopen theyoutube <args>
 
 " vim: set ft=vimperator:
 noremap m :tabprevious<CR>
