@@ -113,6 +113,7 @@ let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
 nnoremap <space>? :Ag!<SPACE>
 nnoremap - :Ag <C-R><C-W><CR>
+autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw(<q-args>)
 nnoremap <space>/ :Files<cr>
 nnoremap <space>t :Files
 nnoremap <space>- :FZF -q <C-R><C-W><CR>
