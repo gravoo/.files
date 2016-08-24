@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/wombat256.vim', {'dir': '~/.vim/colors/wombat256'}
 Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 "add support for 256 colours
