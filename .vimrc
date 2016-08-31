@@ -124,7 +124,8 @@ nnoremap <space>h :History<cr>
 set laststatus=2
 set ttimeoutlen=50
 set encoding=utf-8
-let g:airline_powerline_fonts=1 
+let g:airline_powerline_fonts=1
+let g:cpp_class_scope_highlight = 1
 nmap ,cs :let @+=expand("%")<CR>
 nmap ,cl :let @+=expand("%:p")<CR>
 nmap ,cn :let @+=expand('%:t')<CR>
