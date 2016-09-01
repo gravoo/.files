@@ -69,9 +69,9 @@ set softtabstop=4
 set comments=sl:/*,mb:\ *,elx:\ */
 "scrolls the tex so that there are always al least five lines above
 set so=8
-"show margin at 140 char in darkgray
-highlight ColorColumn ctermbg=darkgray
-set colorcolumn=140
+"copy and paste to system clipboard
+set clipboard=unnamed
+set clipboard=unnamedplus
 "show the cursor position all the time
 set cursorline
 "enable graphical help in command menu
