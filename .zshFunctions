@@ -1,0 +1,15 @@
+# invoke tmux with daily session
+function dailySession()
+{
+    ~/.files/.dailySession
+}
+
+function touchpadToggle()
+{
+    ~/toggletouchpad.sh
+}
+
+function alignWindows()
+{
+    sleep 30 && /home/bsadowsk/wmctrlAssign.sh
+}

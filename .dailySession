@@ -26,7 +26,7 @@ then
 #config repo
     tmux new-window -n .files -t daily 
 	tmux send-keys -t daily:5 'cd ~/.files' C-m
-    tmux send-keys -t daily:5 'vim -p .dailySession .tmux.conf .tmux.design .vimperatorrc .vimrc .ycm_extra_conf.py .zshrc ~/.zshrc ~/.vimrc README.md' C-m
+    tmux send-keys -t daily:5 'vim -p .dailySession .tmux.conf .tmux.design .vimperatorrc .vimrc .ycm_extra_conf.py .zshrc ~/.zshrc ~/.vimrc .zshFunctions README.md' C-m
 	tmux split-window -h -t daily
 	tmux send-keys -t daily:5.2 'cd ~/.files' C-m
 #back to first window

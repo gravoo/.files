@@ -1,6 +1,7 @@
+. /etc/infinality-settings.sh
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
-. /etc/infinality-settings.sh
+source $HOME/.files/.zshFunctions
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -51,15 +52,14 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux vi-mode zsh-256color)
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
-
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 #Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -78,38 +78,27 @@ export EDITOR='vim'
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias refsource='source ~/.zshrc'
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
 #setopt autocd extendedglob nomatch
 #unsetopt beep
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=300
 export BRANCH="gitRepo"
-export MYHOMEREPO=~/
 export MYWORKREPO=~/$BRANCH
+export TERM=screen-256color
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # End of lines configured by zsh-newuser-install
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 
-function startNet()
-{
-    local=$1
-    if [[ -z "$local" ]]; then
-        local='NETIASPOT-CD8AC0'
-    fi
-    sudo netctl start wlp8s0-$local
-
-}
-export TERM=screen-256color
-
-function dailySession()
-{
-    ~/.files/.dailySession
-}
 
 #attach to tmux on start
 if [[ -z "$TMUX" ]] ;then
@@ -121,41 +110,11 @@ if [[ -z "$TMUX" ]] ;then
     fi
 fi
 
-
-#if [ ! -f /home/$USER/.vim/autoload/plug.vim ]; then
-#    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#fi
-if [ ! -d /home/$USER/.tmux/plugins ]; then
+#download only if tmux plugin does not exists
+if [ ! -d $HOME/.tmux/plugins ]; then
     echo "downloading tmux plugin file"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-#if [[ -z $(pgrep xterm) && -n $(pgrep i3) ]]; then
-    #i3-sensible-terminal
-#else
-    #echo "xterm is running"
-#fi
 
-#my repos
-function setVolume()
-{
-    pacmd set-sink-volume 1 $(($1 * 5000))
-}
 
-function touchpadToggle()
-{
-    ~/toggletouchpad.sh
-}
-
-function alignWindows()
-{
-    sleep 30 && /home/bsadowsk/wmctrlAssign.sh
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Setting ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
-# To apply the command to CTRL-T as well
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-alias refsource='source ~/.zshrc'
