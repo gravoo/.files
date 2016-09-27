@@ -23,13 +23,13 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', { 'dir': '~/.vim/plug/vimproc', 'do': 'make' }
-Plug 'amitab/vim-unite-cscope'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/wombat256.vim', {'dir': '~/.vim/colors/wombat256'}
 Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
 Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'craigemery/vim-autotag'
 call plug#end()
 
 "add support for 256 colours
@@ -95,6 +95,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set autowrite     " Automatically :write before running commands
+set autowriteall
 set autoread      " Reload files changed outside vim
 set autowriteall
 " highlight last inserted text
@@ -131,3 +132,5 @@ let g:cpp_class_scope_highlight = 1
 nmap ,cs :let @+=expand("%")<CR>
 nmap ,cl :let @+=expand("%:p")<CR>
 nmap ,cn :let @+=expand('%:t')<CR>
+set clipboard=unnamed
+set clipboard=unnamedplus

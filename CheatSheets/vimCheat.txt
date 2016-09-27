@@ -20,12 +20,15 @@ i - in
 t - till
 f - find forward
 F - find backward
+% - move to matching brackets
+!: - execute external command
 
 Commands:
 d - delete(also cut)
 c - change(delete, then place in insert mode)
 y - yank(copy)
 v - visually select
+R - replace more than one char
 
 Additional Commands:
 dd/yy - delete/yank the current line
@@ -51,3 +54,7 @@ nerdtree
 ctrpl
 fugitive
 syntastic
+
+Awesome features
+:r <something> - insert something to current line
+:v <someting> - save visualised lines to something
