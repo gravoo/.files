@@ -6,25 +6,23 @@ then
 	tmux send-keys -t daily:1 'repo' C-m
 	tmux split-window -h -p 30 -t daily
 	tmux send-keys -t daily:1.2 'repo' C-m
-	tmux split-window -v -t daily
-	tmux send-keys -t daily:1.3 'repo' C-m
 #console
-	tmux new-window -n console -t daily 
+	tmux new-window -n console -t daily
 	tmux send-keys -t daily:2 'checkRepo' C-m
 	tmux split-window -v -t daily
 	tmux send-keys -t daily:2.2 'cd ~/Documents' C-m
 	tmux split-window -h -t daily
 	tmux send-keys -t daily:2.3 'cd ~/Downloads' C-m
 #cheatSheets
-	tmux new-window -n cheatScheets -t daily 
+	tmux new-window -n cheatScheets -t daily
 	tmux send-keys -t daily:3 'vim  ~/.files/CheatSheets/vimCheat.txt ' C-m
 	tmux split-window -h -t daily:3
 	tmux send-keys -t daily:3 'vim  ~/.files/CheatSheets/tmuxCheat.txt ' C-m
 #top
-    tmux new-window -n top -t daily 
+    tmux new-window -n top -t daily
     tmux send-keys -t daily:4 'top' C-m
 #config repo
-    tmux new-window -n .files -t daily 
+    tmux new-window -n .files -t daily
 	tmux send-keys -t daily:5 'cd ~/.files' C-m
     tmux send-keys -t daily:5 'vim -p .dailySession .tmux.conf .tmux.design .vimperatorrc .vimrc .ycm_extra_conf.py .zshrc ~/.zshrc ~/.vimrc .zshFunctions README.md' C-m
 	tmux split-window -h -t daily

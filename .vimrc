@@ -96,6 +96,7 @@ set nowritebackup
 set noswapfile
 set autowrite     " Automatically :write before running commands
 set autoread      " Reload files changed outside vim
+set autowriteall
 " highlight last inserted text
 nnoremap gV `[v`]
 " save session
@@ -112,6 +113,7 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
+nmap <F2> :NERDTreeFind<CR>
 nnoremap <space>? :Ag!<SPACE>
 nnoremap - :Ag <C-R><C-W><CR>
 autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw(<q-args>)
