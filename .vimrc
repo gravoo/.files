@@ -89,7 +89,7 @@ nnoremap k gk
 "Use enter to create new lines w/o entering insert mode
 nnoremap <CR> o<Esc>
 " turn off search highlight
-nnoremap ,<space> :nohlsearch<CR>
+nnoremap ,<Leader> :nohlsearch<CR>
 "turn of swaps files
 set nobackup
 set nowritebackup
@@ -115,22 +115,23 @@ let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
 nmap <F8> :TagbarToggle<CR>
 nmap <F2> :NERDTreeFind<CR>
-nnoremap <space>? :Ag!<SPACE>
+let mapleader = "\<space>"
+nnoremap <Leader>? :Ag!<SPACE>
 nnoremap - :Ag <C-R><C-W><CR>
 autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw(<q-args>)
-nnoremap <space>/ :Files<cr>
-nnoremap <space>t :Files
-nnoremap <space>- :FZF -q <C-R><C-W><CR>
-nnoremap <space><space> :Buffers<cr>
-nnoremap <space>h :History<cr>
-"for airline support 
+nnoremap <Leader>/ :Files<cr>
+nnoremap <Leader>t :Files
+nnoremap <Leader>- :FZF -q <C-R><C-W><CR>
+nnoremap <Leader><Leader> :Buffers<cr>
+nnoremap <Leader>h :History<cr>
+"for airline support
 set laststatus=2
 set ttimeoutlen=50
 set encoding=utf-8
 let g:airline_powerline_fonts=1
 let g:cpp_class_scope_highlight = 1
-nmap ,cs :let @+=expand("%")<CR>
-nmap ,cl :let @+=expand("%:p")<CR>
-nmap ,cn :let @+=expand('%:t')<CR>
+nmap <Leader>cs :let @+=expand("%")<CR>
+nmap <Leader>cl :let @+=expand("%:p")<CR>
+nmap <Leader>cn :let @+=expand('%:t')<CR>
 set clipboard=unnamed
 set clipboard=unnamedplus
