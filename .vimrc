@@ -128,6 +128,8 @@ nnoremap <Leader><Leader> :Buffers<cr>
 nnoremap <Leader>h :History<cr>
 "generate ctags after save
 nnoremap <silent> <Leader>b :Tags '<C-R><C-W> <CR>
+"BLines shortcut
+nnoremap <silent> <Leader>B :BLines<CR>
 "for airline support
 set laststatus=2
 set ttimeoutlen=50
