@@ -10,7 +10,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
-
 "enable plugins
 call plug#begin('~/.vim/plugged')
 "add support for fzf
@@ -109,7 +108,7 @@ set rtp+=~/.fzf
 "Plugin section
 "airtline preferences
 let g:airline_theme='wombat'
-"auto-pairs 
+"auto-pairs
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case"
 let g:ag_highlight=1
@@ -117,13 +116,18 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F2> :NERDTreeFind<CR>
 let mapleader = "\<space>"
 nnoremap <Leader>? :Ag!<SPACE>
-nnoremap - :Ag <C-R><C-W><CR>
+nnoremap - :Ag <C-R><C-W><CR> " find all matches
 autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw(<q-args>)
+"show all files in pwd
 nnoremap <Leader>/ :Files<cr>
-nnoremap <Leader>t :Files
-nnoremap <Leader>- :FZF -q <C-R><C-W><CR>
+"find exact match of function under the cursor
+nnoremap <Leader>- :AgC -Q <C-R><C-W><CR>
+"show all files in current buffer
 nnoremap <Leader><Leader> :Buffers<cr>
+"show files recently visited
 nnoremap <Leader>h :History<cr>
+"generate ctags after save
+nnoremap <silent> <Leader>b :Tags '<C-R><C-W> <CR>
 "for airline support
 set laststatus=2
 set ttimeoutlen=50
