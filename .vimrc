@@ -28,6 +28,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/wombat256.vim', {'dir': '~/.vim/colors/wombat256'}
 Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rhysd/vim-clang-format'
+Plug 'kana/vim-operator-user'
 "Plug 'craigemery/vim-autotag'
 call plug#end()
 
@@ -139,5 +141,18 @@ let g:cpp_class_scope_highlight = 1
 nmap <Leader>cs :let @+=expand("%")<CR>
 nmap <Leader>cl :let @+=expand("%:p")<CR>
 nmap <Leader>cn :let @+=expand('%:t')<CR>
+autocmd FileType c,cpp,objc,vimrc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+let g:clang_format#style_options = {
+              \ "AccessModifierOffset" : -4,
+              \ "AllowShortIfStatementsOnASingleLine" : "true",
+              \ "AlwaysBreakTemplateDeclarations" : "true",
+              \ "Standard" : "C++11",
+              \ "AllowShortFunctionsOnASingleLine" : "All",
+              \ "BinPackParameters" : "false",
+              \ "BreakBeforeBraces" : "Allman",
+              \ "TabWidth" : 4,
+              \ "ColumnLimit " : 120}
+
 set clipboard=unnamed
 set clipboard=unnamedplus
