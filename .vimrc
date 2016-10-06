@@ -141,7 +141,7 @@ let g:cpp_class_scope_highlight = 1
 nmap <Leader>cs :let @+=expand("%")<CR>
 nmap <Leader>cl :let @+=expand("%:p")<CR>
 nmap <Leader>cn :let @+=expand('%:t')<CR>
-autocmd FileType c,cpp,objc,vimrc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 let g:clang_format#style_options = {
               \ "AccessModifierOffset" : -4,
