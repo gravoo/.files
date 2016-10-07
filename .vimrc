@@ -12,7 +12,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 "enable plugins
 call plug#begin('~/.vim/plugged')
-"add support for fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -118,7 +117,8 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F2> :NERDTreeFind<CR>
 let mapleader = "\<space>"
 nnoremap <Leader>? :Ag!<SPACE>
-nnoremap - :Ag <C-R><C-W><CR> " find all matches
+" find all matches
+nnoremap - :Ag <C-R><C-W><CR>
 autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw(<q-args>)
 "show all files in pwd
 nnoremap <Leader>/ :Files<cr>
@@ -132,6 +132,8 @@ nnoremap <Leader>h :History<cr>
 nnoremap <silent> <Leader>b :Tags '<C-R><C-W> <CR>
 "BLines shortcut
 nnoremap <silent> <Leader>B :BLines<CR>
+"find file matchin name under the cursor
+nnoremap <Leader>f :FZF -q <C-R><C-W><CR>
 "for airline support
 set laststatus=2
 set ttimeoutlen=50
