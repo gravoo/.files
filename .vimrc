@@ -154,7 +154,8 @@ let g:clang_format#style_options = {
               \ "BinPackParameters" : "false",
               \ "BreakBeforeBraces" : "Allman",
               \ "TabWidth" : 4,
-              \ "ColumnLimit " : 120}
-
+              \ "ColumnLimit " : 120,
+              \ "SortIncludes" : "false"}
 set clipboard=unnamed
 set clipboard=unnamedplus
+
