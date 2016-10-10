@@ -29,7 +29,6 @@ Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
-"Plug 'craigemery/vim-autotag'
 call plug#end()
 
 "add support for 256 colours
@@ -154,8 +153,7 @@ let g:clang_format#style_options = {
               \ "BinPackParameters" : "false",
               \ "BreakBeforeBraces" : "Allman",
               \ "TabWidth" : 4,
-              \ "ColumnLimit " : 120,
+              \ "ColumnLimit " : 155,
               \ "SortIncludes" : "false"}
 set clipboard=unnamed
 set clipboard=unnamedplus
-
