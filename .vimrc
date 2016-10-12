@@ -139,21 +139,29 @@ set ttimeoutlen=50
 set encoding=utf-8
 let g:airline_powerline_fonts=1
 let g:cpp_class_scope_highlight = 1
+"clang-format options
+let g:clang_format#code_style = "llvm"
 nmap <Leader>cs :let @+=expand("%")<CR>
 nmap <Leader>cl :let @+=expand("%:p")<CR>
 nmap <Leader>cn :let @+=expand('%:t')<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+augroup ClangFormatSettings
+autocmd!
+" map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+augroup END
+
+let g:clang_format#auto_format_on_insert_leave = 1
+let g:clang_format#detect_style_file = '/home/bsadowsk/.clang-format'
 let g:clang_format#style_options = {
-              \ "AccessModifierOffset" : -4,
-              \ "AllowShortIfStatementsOnASingleLine" : "true",
-              \ "AlwaysBreakTemplateDeclarations" : "true",
-              \ "Standard" : "C++11",
-              \ "AllowShortFunctionsOnASingleLine" : "All",
-              \ "BinPackParameters" : "false",
               \ "BreakBeforeBraces" : "Allman",
+              \ "SortIncludes" : "false",
+              \ "Standard" : "Cpp11",
               \ "TabWidth" : 4,
-              \ "ColumnLimit " : 155,
-              \ "SortIncludes" : "false"}
+              \ "ColumnLimit" : 155 }
+
 set clipboard=unnamed
 set clipboard=unnamedplus
