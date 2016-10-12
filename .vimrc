@@ -161,7 +161,8 @@ let g:clang_format#style_options = {
               \ "SortIncludes" : "false",
               \ "Standard" : "Cpp11",
               \ "TabWidth" : 4,
-              \ "ColumnLimit" : 155 }
+              \ "ColumnLimit" : 155,
+              \ "AccessModifierOffset" : -4 }
 
 set clipboard=unnamed
 set clipboard=unnamedplus
