@@ -162,7 +162,13 @@ let g:clang_format#style_options = {
               \ "Standard" : "Cpp11",
               \ "TabWidth" : 4,
               \ "ColumnLimit" : 155,
-              \ "AccessModifierOffset" : -4 }
+              \ "AccessModifierOffset" : -4,
+              \ "BinPackParameters" : "false",
+              \ "BinPackArguments" : "false",
+              \ "AlignAfterOpenBracket" : "DontAlign",
+              \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+              \ "ContinuationIndentWidth" : 8,
+              \ "AllowShortBlocksOnASingleLine" : "false"}
 
 set clipboard=unnamed
 set clipboard=unnamedplus
