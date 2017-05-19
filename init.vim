@@ -23,6 +23,7 @@ set tabstop=4   "tab width is 4 spaces
 set shiftwidth=4    "indent alsow with 4 spaces
 set expandtab   "expand tab to spaces
 set softtabstop=4
+set clipboard=unnamedplus
 
 " Initialize plugin system
 call plug#begin('~/.local/share/nvim/plugged')
@@ -33,6 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'fatih/vim-go'
     Plug 'terryma/vim-smooth-scroll'
     Plug 'benmills/vimux'
+    Plug 'tpope/vim-eunuch'
 call plug#end()
 
 colorscheme solarized
