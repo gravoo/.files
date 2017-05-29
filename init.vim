@@ -35,6 +35,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'terryma/vim-smooth-scroll'
     Plug 'benmills/vimux'
     Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-surround'
+    Plug 'jiangmiao/auto-pairs' 
 call plug#end()
 
 colorscheme solarized
