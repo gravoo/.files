@@ -1,4 +1,4 @@
-. /etc/infinality-settings.sh
+#. /etc/infinality-settings.sh
 # Path to your oh-my-zsh installation.
 ##export ZSH=/home/$USER/.oh-my-zsh
 #source $HOME/.files/.zshFunctions
@@ -78,7 +78,8 @@
 ## Example aliases
 #alias zshconfig="vim ~/.zshrc"
 #alias ohmyzsh="vim ~/.oh-my-zsh"
-#alias refsource='source ~/.zshrc'
+alias refsource='source ~/.zshrc'
+alias files="cd ~/.files"
 #
 ## Lines configured by zsh-newuser-install
 ##setopt autocd extendedglob nomatch
@@ -104,7 +105,7 @@
 if [[ -z "$TMUX" ]] ;then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
-        dailySession
+        tmux new -s daily
     else
         tmux attach-session -t "$ID" # if available attach to it
     fi
