@@ -79,7 +79,8 @@
 #alias zshconfig="vim ~/.zshrc"
 #alias ohmyzsh="vim ~/.oh-my-zsh"
 alias refsource='source ~/.zshrc'
-alias files="cd ~/.files"
+alias files="~/.files"
+alias game="/home/$USER/Projects/Particles"
 #
 ## Lines configured by zsh-newuser-install
 ##setopt autocd extendedglob nomatch
