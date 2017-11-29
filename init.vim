@@ -25,6 +25,13 @@ set expandtab   "expand tab to spaces
 set softtabstop=4
 set clipboard=unnamedplus
 
+"download and enable if no vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 " Initialize plugin system
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -37,9 +44,15 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs' 
+    Plug 'antlypls/vim-colors-codeschool'
+    Plug 'mkarmona/colorsbox'
 call plug#end()
 
-colorscheme solarized
+"add support for 256 colours
+set t_Co=256
+"colorscheme solarized
+"colorscheme codeschool
+colorscheme colorsbox-material
 syntax enable
 
 "show all files in current buffer
