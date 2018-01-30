@@ -1,7 +1,9 @@
 # Tmux 
-##commands from terminal:
+
+## commands from terminal:
 * tmux new-sesion -s {sesion-name}
-##C-a:
+
+## C-a:
    * d - detaches form the session
    * : - enters command mode
    * c - creates a new window
