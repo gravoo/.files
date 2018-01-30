@@ -1,4 +1,6 @@
-# Tmux new-sesion -s {sesion-name}
+# Tmux 
+commands from terminal:
+* tmux new-sesion -s {sesion-name}
 C-a:
     d - detaches form the session
     : - enters command mode
@@ -15,4 +17,4 @@ C-a:
     space - cycles through pane layouts
     } - move the current pane to the next position
     { - move the current pane to the previous position
-:
+
