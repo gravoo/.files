@@ -29,6 +29,7 @@ Plug 'vim-scripts/summerfruit256.vim', {'dir': '~/.vim/colors/summerfruit256'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
+Plug 'aperezdc/vim-template'
 call plug#end()
 
 "add support for 256 colours

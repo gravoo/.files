@@ -52,6 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'jiangmiao/auto-pairs' 
     Plug 'antlypls/vim-colors-codeschool'
     Plug 'mkarmona/colorsbox'
+    Plug 'aperezdc/vim-template'
 call plug#end()
 
 let mapleader = "\<space>"
