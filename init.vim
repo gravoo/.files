@@ -25,6 +25,7 @@ set shiftwidth=4    "indent alsow with 4 spaces
 set expandtab   "expand tab to spaces
 set softtabstop=4
 set clipboard=unnamedplus
+set clipboard=unnamed
 set hlsearch "highlights all found items
 
 "download and enable if no vim-plug

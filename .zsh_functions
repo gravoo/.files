@@ -1,0 +1,6 @@
+function filedirtoclip()
+{
+    tmp=$(dirname $(realpath $(ag -g $1 .) ))
+    echo $tmp | xsel -ib
+    echo $tmp
+}

@@ -1,7 +1,7 @@
 #. /etc/infinality-settings.sh
 # Path to your oh-my-zsh installation.
 ##export ZSH=/home/$USER/.oh-my-zsh
-#source $HOME/.files/.zshFunctions
+source .files/.zsh_functions
 #
 ## Set name of the theme to load.
 ## Look in ~/.oh-my-zsh/themes/
