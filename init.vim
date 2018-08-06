@@ -1,8 +1,9 @@
+"default options
 set ignorecase "ignore case when searching
 set cursorline "show the cursor position all the time
 set relativenumber "turn on line numbering
 set number
-set smartcase "overides ignorecase when capital leaters are used
+"set smartcase "overides ignorecase when capital leaters are used
 set incsearch "increment search in buffer
 set so=8 "scrolls the tex so that there are always al least five lines above
 set numberwidth=2
@@ -13,6 +14,7 @@ set noswapfile
 set autowrite     " Automatically :write before running commands
 set autowriteall
 set autoread      " Reload files changed outside vim
+au CursorHold,CursorHoldI * checktime
 set shell=zsh "set zsh ash shell
 set background=light
 set splitbelow
@@ -25,8 +27,9 @@ set shiftwidth=4    "indent alsow with 4 spaces
 set expandtab   "expand tab to spaces
 set softtabstop=4
 set clipboard=unnamedplus
-set clipboard=unnamed
 set hlsearch "highlights all found items
+set t_Co=256 "add support for 256 colours
+syntax enable
 
 "download and enable if no vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -51,22 +54,16 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'mkarmona/colorsbox'
 call plug#end()
 
-"add support for 256 colours
-set t_Co=256
-"colorscheme solarized
-"colorscheme codeschool
-colorscheme colorsbox-material
-syntax enable
-
-"show all files in current buffer
 let mapleader = "\<space>"
+colorscheme colorsbox-material
+"show all files in current buffer
 nnoremap <Leader><Leader> :Buffers<cr>
 nnoremap <Leader>/ :Files<cr>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " Navigate properly when lines are wrapped
 nnoremap j gj
 inoremap <special> jk <ESC>

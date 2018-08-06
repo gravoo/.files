@@ -81,6 +81,8 @@ source /home/$USER/.files/.zsh_functions
 alias refsource='source ~/.zshrc'
 alias files="~/.files"
 alias game="/home/$USER/Projects/Particles"
+export HISTCONTROL=ignoreboth:erasedups
+
 #
 ## Lines configured by zsh-newuser-install
 ##setopt autocd extendedglob nomatch

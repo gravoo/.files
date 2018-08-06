@@ -69,7 +69,7 @@ set comments=sl:/*,mb:\ *,elx:\ */
 "scrolls the tex so that there are always al least five lines above
 set so=8
 "copy and paste to system clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 set clipboard=unnamedplus
 "show the cursor position all the time
 set cursorline
