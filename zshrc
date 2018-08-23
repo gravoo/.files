@@ -115,9 +115,11 @@ if [[ -z "$TMUX" ]] ;then
 fi
 
 #download only if tmux plugin does not exists
-if [ ! -d $HOME/.tmux/plugins ]; then
+if [ ! -d $HOME/.tmux/plugins/ ]; then
     echo "downloading tmux plugin file"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    tmux source ~/.tmux.conf
+    ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 
