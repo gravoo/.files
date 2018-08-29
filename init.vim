@@ -52,6 +52,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'jiangmiao/auto-pairs' 
     Plug 'antlypls/vim-colors-codeschool'
     Plug 'mkarmona/colorsbox'
+    Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
+    Plug 'mileszs/ack.vim'
     Plug 'aperezdc/vim-template'
 call plug#end()
 
@@ -76,4 +78,7 @@ map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 " Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
+" opening a new file when the current buffer has unsaved changes causes files
+" to be hidden instead of closed
+set hidden
 set rtp+=~/.fzf
