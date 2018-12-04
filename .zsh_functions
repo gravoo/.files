@@ -4,3 +4,4 @@ function filedirtoclip()
     echo $tmp | xsel -ib
     echo $tmp
 }
+
