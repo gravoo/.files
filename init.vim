@@ -29,6 +29,7 @@ set softtabstop=4
 set clipboard=unnamedplus
 set hlsearch "highlights all found items
 set t_Co=256 "add support for 256 colours
+set mouse=a "enable mouse scrolling 
 syntax enable
 
 "download and enable if no vim-plug
