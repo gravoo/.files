@@ -1,8 +1,9 @@
-source /home/$USER/.files/.zsh_functions
-alias refsource='source ~/.zshrc'
-alias dotfiles="~/.files"
-alias game="/home/$USER/Projects/Particles"
+export DOTFILES=".files"
+source $HOME/$DOTFILES/.zsh_functions
+alias refsource="source $HOME/.zshrc"
+alias dotfiles="$HOME/$DOTFILES"
 export HISTCONTROL=ignoreboth:erasedups
+export PATH=$HOME/$DOTFILES/scripts:$PATH
 
 #attach to tmux on start
 if [[ -z "$TMUX" ]] ;then

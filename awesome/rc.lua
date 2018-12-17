@@ -339,7 +339,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause", false) end),
     awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl previous", false) end),
     awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl next", false) end),
-    awful.key({ }, "XF86AudioStop", function () awful.util.spawn("playerctl stop", false) end)
+    awful.key({ }, "XF86AudioStop", function () awful.util.spawn("playerctl stop", false) end),
+    awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("i3lock", false) end)
 )
 
 clientkeys = gears.table.join(
