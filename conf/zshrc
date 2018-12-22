@@ -1,5 +1,5 @@
 export DOTFILES=".files"
-source $HOME/$DOTFILES/.zsh_functions
+source $HOME/$DOTFILES/conf/zsh_functions
 alias refsource="source $HOME/.zshrc"
 alias dotfiles="$HOME/$DOTFILES"
 export HISTCONTROL=ignoreboth:erasedups

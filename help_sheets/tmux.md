@@ -11,8 +11,8 @@
    * w - menu with windows list
    * , - display a prompt to rename a window
    * & - close current window after confirm info
-   * % - split horizontally
-   * " - split vertically
+   * %/| - split horizontally
+   * "/- - split vertically
    * o - cycles through open panes
    * q - show pane numbers
    * x - close current pane
