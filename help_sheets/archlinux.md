@@ -6,6 +6,8 @@
     * source /etc/profile.d/locale.sh
 ## swap ctrl with caps, set pl for X
     * setxkbmap -layout pl -option ctrl:nocaps 
+## lock screen after login with i3lock, udev rule
+    * cp ~/.files/conf/resume@.service /etc/systemd/system 
 
 
 
@@ -24,7 +26,6 @@
 
 
 
-: 1545513394:0;dotfiles
 
 
     
