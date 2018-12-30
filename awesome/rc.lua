@@ -569,16 +569,33 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- get the current Pid of awesome
+local function getPidOf(id)
+    local fpid = io.popen("pgrep -u " .. os.getenv("USER") .. " -o " .. id)
+    local pid = fpid:read("*n")
+    fpid:close()
+    -- sanity check
+    if pid == nil then
+        return -1
+    end
+    return pid
+end
+
 do
   local cmds =
   {
     "firefox",
     "guake",
     "spotify",
-    "wicd-gtk"
+    "wicd-client"
   }
 
-  for _,i in pairs(cmds) do
+for _,i in pairs(cmds) do
+local pid = getPidOf(i)
+if pid == -1 then
     awful.util.spawn(i)
-  end
+end
+end
+
 end
