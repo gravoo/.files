@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
+local xrandr = require("xrandr")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -340,7 +341,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl previous", false) end),
     awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl next", false) end),
     awful.key({ }, "XF86AudioStop", function () awful.util.spawn("playerctl stop", false) end),
-    awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("i3lock", false) end)
+    awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("i3lock", false) end),
+    awful.key({ modkey, "Control" }, "x", function() xrandr.xrandr() end)
 )
 
 clientkeys = gears.table.join(
