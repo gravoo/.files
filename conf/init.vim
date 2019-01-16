@@ -56,6 +56,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
     Plug 'mileszs/ack.vim'
     Plug 'aperezdc/vim-template'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader = "\<space>"
