@@ -1,6 +1,8 @@
 #!/bin/bash
 lang='pl'
 volume='85'
+source ~/.files/conf/zshrc
+
 prev_volume=`current_volume.sh`
 
 while getopts 'l:v:h' option; do
@@ -17,6 +19,7 @@ mute_app.sh firefox
 mute_app.sh spotify
 mute_app.sh vlc
 set_volume.sh "$volume"
+sleep 3
 mpg123 /tmp/google_tts.mp3 2> /dev/null
 mute_app.sh -u firefox
 mute_app.sh -u spotify

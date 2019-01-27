@@ -588,7 +588,9 @@ do
     "firefox",
     "guake",
     "spotify",
-    "wicd-client"
+    "wicd-client",
+    "xfce4-power-manager",
+    "pasystray"
   }
 
 for _,i in pairs(cmds) do
