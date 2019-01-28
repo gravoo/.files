@@ -30,6 +30,7 @@ set clipboard=unnamedplus
 set hlsearch "highlights all found items
 set t_Co=256 "add support for 256 colours
 set mouse=a "enable mouse scrolling 
+set laststatus=2 "enable lightline
 syntax enable
 
 "download and enable if no vim-plug
@@ -53,17 +54,20 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'jiangmiao/auto-pairs' 
     Plug 'antlypls/vim-colors-codeschool'
     Plug 'mkarmona/colorsbox'
-    Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
     Plug 'mileszs/ack.vim'
     Plug 'aperezdc/vim-template'
     Plug 'tpope/vim-fugitive'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let mapleader = "\<space>"
 colorscheme colorsbox-material
 "show all files in current buffer
 nnoremap <Leader><Leader> :Buffers<cr>
-nnoremap <Leader>/ :Files<cr>
+nnoremap <Leader>n :let @+ = expand("%:t:r")<cr>
+nnoremap <Leader>/ : Files<cr>
+nnoremap <Leader>f :let @+ = expand('<cword>')<cr>: Rg<cr>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
@@ -80,8 +84,11 @@ map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 " Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
-" opening a new file when the current buffer has unsaved changes causes files
-" to be hidden instead of closed
+" opening a new file when the current buffer has unsaved changes causes files  to be hidden instead of closed
 set hidden
 set pastetoggle=<F2>
 set rtp+=~/.fzf
+nmap <Leader>cp :let @+ = expand("%:t:r")<cr>
+
+
+
