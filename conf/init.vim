@@ -67,7 +67,7 @@ colorscheme colorsbox-material
 nnoremap <Leader><Leader> :Buffers<cr>
 nnoremap <Leader>n :let @+ = expand("%:t:r")<cr>
 nnoremap <Leader>/ : Files<cr>
-nnoremap <Leader>f :let @+ = expand('<cword>')<cr>: Rg<cr>
+nnoremap <Leader>f : Rg <C-r><C-w><CR>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
@@ -78,6 +78,9 @@ nnoremap j gj
 inoremap <special> jk <ESC>
 inoremap jk <Esc>
 nnoremap k gk
+" Disable that stupid opening window with history commands
+inoremap q: <Esc>
+nnoremap q: <Esc>
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
@@ -89,6 +92,25 @@ set hidden
 set pastetoggle=<F2>
 set rtp+=~/.fzf
 nmap <Leader>cp :let @+ = expand("%:t:r")<cr>
+nnoremap <leader>pwd :pwd<cr>
+nnoremap <leader>cd :cd %:p:h<CR>
+nnoremap <leader>root :call Cdgitroot()<cr>
+nnoremap <leader>ls :cd %:p:h<cr>:Lexplore<cr>
 
+function Cdgitroot()
+    execute "cd ".system("git root")
+endfunctio
 
+command! -bang -nargs=* Ag
+  \ call fzf#vim#grep('ag --nogroup --column --color '.<q-args>, 1,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
