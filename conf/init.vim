@@ -67,7 +67,7 @@ colorscheme colorsbox-material
 nnoremap <Leader><Leader> :Buffers<cr>
 nnoremap <Leader>n :let @+ = expand("%:t:r")<cr>
 nnoremap <Leader>/ : Files<cr>
-nnoremap <Leader>f : Rg <C-r><C-w><CR>
+nnoremap <Leader>f : Ag <C-r><C-w><CR>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
