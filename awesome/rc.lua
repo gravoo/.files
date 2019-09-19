@@ -588,7 +588,7 @@ do
     "firefox",
     "guake",
     "spotify",
-    "wicd-client",
+    "nm-applet",
     "xfce4-power-manager",
     "pasystray"
   }

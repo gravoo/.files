@@ -57,8 +57,13 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'mileszs/ack.vim'
     Plug 'aperezdc/vim-template'
     Plug 'tpope/vim-fugitive'
+<<<<<<< HEAD
     Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'
+=======
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'Valloric/YouCompleteMe'
+>>>>>>> new plugin to cPP, new nm-applet
 call plug#end()
 
 let mapleader = "\<space>"
